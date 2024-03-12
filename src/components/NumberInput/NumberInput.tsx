@@ -14,12 +14,13 @@ const StNumberInputInput = styled(ArkNumberInput.Input)`
     padding: 5px;
     text-align: center;
     width: max-content;
+    color: #0a0a0a;
 `
 const StArkNumberInputIncrement = styled(ArkNumberInput.IncrementTrigger)`
     background-color: #0c0a09;
     color: #fff;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 1px;
     margin-left: 10px;
 
     &:hover {
@@ -30,7 +31,7 @@ const StArkNumberInputDecrement = styled(ArkNumberInput.DecrementTrigger)`
     background-color: #0c0a09;
     color: #fff;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px;
     margin-right: 10px;
     &:hover {
         background-color: #373750;

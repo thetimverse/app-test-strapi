@@ -9,8 +9,8 @@ const StCardContainer = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
     padding: 1em 2em;
 `
 

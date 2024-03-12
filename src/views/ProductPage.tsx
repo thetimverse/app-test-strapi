@@ -31,7 +31,7 @@ const StProductInfo = styled.div`
 function ProductPage() {
     const {id} = useParams()
     const {data} = useGetProductQuery(Number(id));
-    // console.log(data?.data);
+    console.log(data?.data);
     const product = data?.data;
 
     return (

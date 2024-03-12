@@ -11,6 +11,7 @@ import {QueryClientProvider} from "@tanstack/react-query";
 import queryClient from "./services/query.ts";
 import './index.css'
 import '../styled-system/styles.css'
+import CategoryPage from "./views/CategoryPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
         path: "/products/:id",
         element: <ProductPage/>,
+    },
+    {
+        path: "/categories/:id",
+        element: <CategoryPage/>,
     },
 ]);
 

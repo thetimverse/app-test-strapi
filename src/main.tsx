@@ -12,6 +12,7 @@ import queryClient from "./services/query.ts";
 import './index.css'
 import '../styled-system/styles.css'
 import CategoryPage from "./views/CategoryPage.tsx";
+import ProductsPage from "./views/ProductsPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     {
         path: "/products/:id",
         element: <ProductPage/>,
+    },
+    {
+        path: "/products",
+        element: <ProductsPage/>,
     },
     {
         path: "/categories/:id",

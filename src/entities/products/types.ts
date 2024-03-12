@@ -46,6 +46,16 @@ export type Category = {
                         "createdAt": string,
                         "updatedAt": string,
                         "publishedAt": string
+                        "image": {
+                            "data": {
+                                "id": number,
+                                "attributes": {
+                                    "name": string,
+                                    "alternativeText": string,
+                                    "url": string,
+                                }
+                            }
+                        },
                     }
                 },
             ]

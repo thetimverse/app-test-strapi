@@ -4,10 +4,13 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  font-size: 24px;
+  font-weight: 700;
   will-change: filter;
   transition: filter 300ms;
+}
+.logo span {
+  color: #373750;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);

@@ -3,6 +3,11 @@ import {useGetProductsQuery} from "./entities/products/queries.ts";
 import Card from "./components/Card/Card.tsx";
 import {styled} from "../styled-system/jsx";
 import {Link} from "react-router-dom";
+import Header from "./components/Header/Header.tsx";
+
+const StBody = styled.div`
+  
+`
 
 const StCardContainer = styled.div`
     display: flex;
@@ -22,16 +27,20 @@ function App() {
   const { data } = useGetProductsQuery();
   console.log(data);
 
-  return <StCardContainer>
-        { data?.data.map((product, index)=>
-            <StLink to={`/products/${product.id}`} key={`${index}-${product.id}`}>
-                <Card title={product.attributes.title} category={product.attributes.category.data.attributes.name}
-                      description={product.attributes.description}
-                      imageSrc={product.attributes.image.data.attributes.url} price={product.attributes.price}/>
-            </StLink>
-        )}
-    </StCardContainer>
-
+  return (
+      <div>
+        <Header/>
+        <StCardContainer>
+            { data?.data.map((product, index)=>
+                <StLink to={`/products/${product.id}`} key={`${index}-${product.id}`}>
+                    <Card title={product.attributes.title} category={product.attributes.category.data.attributes.name}
+                          description={product.attributes.description}
+                          imageSrc={product.attributes.image.data.attributes.url} price={product.attributes.price}/>
+                </StLink>
+            )}
+        </StCardContainer>
+      </div>
+  );
 }
 
 export default App

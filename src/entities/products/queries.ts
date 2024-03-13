@@ -21,7 +21,7 @@ export const useGetProductQuery = ( id : Product['id']) => {
         queryKey: ['products', id],
         queryFn: () => {
             return api
-                .get<StrapiResponse<Product[]>>(`/products/${id}?populate=*`)
+                .get<StrapiResponse<Product>>(`/products/${id}?populate=*`)
                 .then((response) => {
                     return response.data
                 })
@@ -46,7 +46,7 @@ export const useGetCategoryQuery = ( id : Category['id']) => {
         queryKey: ['categories', id],
         queryFn: () => {
             return api
-                .get<StrapiResponse<Product[]>>(`/categories/${id}?populate=*`)
+                .get<StrapiResponse<Category>>(`/categories/${id}?populate[products][populate]=image`)
                 .then((response) => {
                     return response.data
                 })

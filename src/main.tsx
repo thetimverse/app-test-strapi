@@ -12,6 +12,8 @@ import queryClient from "./services/query.ts";
 import './index.css'
 import '../styled-system/styles.css'
 import CategoryPage from "./views/CategoryPage.tsx";
+import ProductsPage from "./views/ProductsPage.tsx";
+import CategoriesPage from "./views/CategoriesPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -23,9 +25,17 @@ const router = createBrowserRouter([
         element: <ProductPage/>,
     },
     {
+        path: "/products",
+        element: <ProductsPage/>,
+    },
+    {
         path: "/categories/:id",
         element: <CategoryPage/>,
     },
+    {
+        path: "/categories",
+        element: <CategoriesPage/>
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

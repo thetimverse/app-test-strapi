@@ -13,7 +13,7 @@ const StCard = styled.div`
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 5px 5px;
     background-color: #fff;
     color: #0a0a0a;
 `
@@ -42,7 +42,7 @@ function Card({ imageSrc, title, description, price, category, ...props }: CardP
     return (
         <StCard className={'card'} {...props}>
             <CardImage src={`${imageSrc}`} size={"small"}/>
-            <Text type={"title"}><h2>{title}</h2></Text>
+            <Text type={"title"}><h3>{title}</h3></Text>
             <Text type={"body"}><p>{description}</p></Text>
             <Text type={"price"}><p>{price} €</p></Text>
             <StCardCategories>

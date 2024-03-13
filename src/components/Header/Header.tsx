@@ -22,7 +22,7 @@ function Header() {
             <StNav>
                 <Link to={"/"}>Home</Link>
                 <Link to={"/products"}>Products</Link>
-                <li>Categories</li>
+                <Link to={"/categories"}>Categories</Link>
             </StNav>
         </StHeader>
     );

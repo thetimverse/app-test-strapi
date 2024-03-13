@@ -17,6 +17,11 @@ const StCardContainer = styled.div`
 const StLink = styled(Link)`
     width: 415px;
 `
+const StCategoryTitle = styled.h2`
+    font-weight: 700;
+    font-size: 28px;
+`
+
 function CategoryPage() {
     const {id} = useParams();
     const {data} = useGetCategoryQuery(Number(id));
@@ -25,19 +30,21 @@ function CategoryPage() {
     return (
         <div>
             <Header/>
-            <h2>{data?.data.attributes.name}</h2>
+            <StCategoryTitle>{data?.data.attributes.name}</StCategoryTitle>
             <StCardContainer>
                 {
-                    data?.data.attributes.products.data.map((product, index) =>
-                        <StLink to={`/products/${product.id}`} key={`${index}-${product.id}`}>
-                            <Card title={product.attributes.title} category={data?.data.attributes.name}
-                              description={product.attributes.description}
-                              imageSrc={product.attributes.image.data.attributes.url}
-                              price={product.attributes.price}/>
-                        </StLink>
-                )
-                }:{
-                    <h3>Sorry, there is no product in that category in your wishlist.</h3>
+                    data?.data.attributes?.products?.data?.length? (
+                        data?.data.attributes.products.data.map((product, index) =>
+                            <StLink to={`/products/${product.id}`} key={`${index}-${product.id}`}>
+                                <Card title={product.attributes.title} category={data?.data.attributes.name}
+                                  description={product.attributes.description}
+                                  imageSrc={product.attributes.image.data.attributes.url}
+                                  price={product.attributes.price}/>
+                            </StLink>
+                        )
+                    ):(
+                        <h3>There is no product from that category in your wishlist.</h3>
+                    )
                 }
             </StCardContainer>
         </div>

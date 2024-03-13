@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Mini TypeScript, Strapi API and React Wishlist App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technologies
+- React with TypeScript
+- [Strapi API Docs](https://docs.strapi.io/) for easy API creation and management
+- [PandaCSS Docs](https://panda-css.com/docs/overview/getting-started) for CSS-in-JS
+- [Ark UI Docs](https://ark-ui.com/docs/overview/introduction) for UI elements
+- [TanStack Query Docs](https://tanstack.com/query/latest/docs/framework/react/overview) for API calls
+- [Storybook Docs](https://storybook.js.org/docs/get-started/install) for UI Stories
 
-Currently, two official plugins are available:
+## How to test the app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Get the repo locally by running `git clone https://github.com/thetimverse/app-test-strapi.git` in your preferred directory, by using Github Desktop or by downloading the Zip file.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Then, in your Strapi API backend directory, start the server with:
+```shell
+ npm run develop
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- In your React project directory:
+```shell
+ npm run dev
+ npx panda --watch
+```
+- If you want to run Storybook:
+```
+ npm run storybook
+```
+
